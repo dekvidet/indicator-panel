@@ -1,0 +1,27 @@
+{
+	"start": [
+		"echo Initiating process",
+		"echo Online"
+	],
+	"stop": [
+		"echo Prepare to shut down",
+		"echo Offline"
+	],
+	"other": [
+		{
+			"label": "Print hungarian city names",
+			"commands": [
+				"echo Budapest",
+				"echo Debrecen",
+				"echo Miskolc",
+				"echo Szeged"
+			]
+		},
+		{
+			"label": "Print /home path",
+			"commands": [
+				"cd /home;pwd"
+			]
+		}
+	]
+}
