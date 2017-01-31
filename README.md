@@ -1,16 +1,47 @@
 #IndicatorPanel#
 
-IndicatorPanel is a small python script for Ubuntu that creates and indicator in the top panel so you can run custom terminal commands.
+IndicatorPanel is a small python script for Ubuntu that creates an indicator in the top panel so you can run custom terminal commands.
 
-The only dependency is python, that comes with Ubuntu by default.
+![IndicatorPanel demo](demo.gif)
+
+##Setup##
+
+The only dependency is python, but that comes with Ubuntu by default.
 
 To start the app just type:
 
-```python
-    python indicator.py
+```sh
+python indicator.py
 ```
 
-To autostart this app just add the command above to the [Startup Applications](https://help.ubuntu.com/16.04/ubuntu-help/startup-applications.html)
+Or even better, run it as a background process:
+
+```sh
+chmod +x indicator.py # First, make the script executable
+nohup indicator.py & # Run it in background
+```
+
+To autostart this script just add this command (with an absolute path to the script file) to the [Startup Applications](https://help.ubuntu.com/16.04/ubuntu-help/startup-applications.html):
+
+##Usage##
+
+Add your commands to the `data.commands.json` file. There are two parts of the app.
+
+###Indicated start/stop scripts###
+
+This is a toggleable part of the app whose status is indicated in the panel.
+
+- When you click "Start", the scripts in the `start` array will be run and the indicator will display the `icons\online.svg` icon. You can't execute start scripts again until you press "Stop".
+- When you click "Stop", the scripts in the `stop` array will be run and the indicator will display the `icons\offline.svg`. You can't execute stop scripts again until you press "Start".
+
+You can have only one indicated start/stop script block per app, but you can run the script multiple times to have more apps.
+
+###Other scripts###
+
+You can create multiple general scripts that can be run in any state of the app, just add objects to the `other` array that has:
+
+- A `label` property with a string containing the text of the dropdown's menu item.
+- A `commands` property containing an array of strings that can be run as commands when you click the menu item.
 
 ##License##
 
