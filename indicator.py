@@ -46,7 +46,7 @@ class Indicator:
 		self.gtk.main()
 
 	def get_path(self, string):
-		return self.path.join(self.path.dirname(__file__), string)
+		return self.path.join(self.path.dirname(self.path.abspath(__file__)), string)
 
 	def get_icon_path(self, icon_name):
 		return  self.get_path("icons/%s.svg" % (icon_name))
