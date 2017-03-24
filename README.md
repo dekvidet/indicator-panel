@@ -1,10 +1,10 @@
-#IndicatorPanel#
+# IndicatorPanel
 
 IndicatorPanel is a small python script for Ubuntu that creates an indicator in the top panel so you can run custom terminal commands.
 
 ![IndicatorPanel demo](demo.gif)
 
-##Setup##
+## Setup
 
 The only dependency is python, but that comes with Ubuntu by default.
 
@@ -23,11 +23,11 @@ nohup indicator.py & # Run it in background
 
 To autostart this script just add this command (with an absolute path to the script file) to the [Startup Applications](https://help.ubuntu.com/16.04/ubuntu-help/startup-applications.html):
 
-##Usage##
+## Usage
 
 Add your commands to the `data.commands.json` file. There are two parts of the app.
 
-###Indicated start/stop scripts###
+### Indicated start/stop scripts
 
 This is a toggleable part of the app whose status is indicated in the panel.
 
@@ -36,18 +36,18 @@ This is a toggleable part of the app whose status is indicated in the panel.
 
 You can have only one indicated start/stop script block per app, but you can run the script multiple times to have more apps.
 
-###Other scripts###
+### Other scripts
 
 You can create multiple general scripts that can be run in any state of the app, just add objects to the `other` array that has:
 
 - A `label` property with a string containing the text of the dropdown's menu item.
 - A `commands` property containing an array of strings that can be run as commands when you click the menu item.
 
-##License##
+## License
 
 GPLv3
 
-##Attribution & Third Party Stuff##
+## Attribution & Third Party Stuff
 
 Made with the help of these tutorials:
 
